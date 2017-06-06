@@ -1,2 +1,2 @@
 # dfaoisfopiajs
-This project is the `dfaoisfopiajs` project :)
+This project is the `dfaoisfopiajs` project 😀
