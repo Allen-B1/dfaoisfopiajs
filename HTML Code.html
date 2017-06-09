@@ -50,30 +50,10 @@ if (p == undefined){
 var inp = document.createElement("input");
 var j = document.createElement("P")
 var t = document.createElement("P")
-var now = new Date();
-var hour = now.getHours()
- 
-if (hour >= 12)
-{
-var bas = "pm"
-}
-else
-{
-var bas = "am"
-}
-var hours = now.getHours() % 12 || 12;
-var minutes = now.getMinutes()
-if (minutes < 10)
-{
-minutes = "0" + minutes
-}
-var timej = hours + ":" + minutes + " " + bas
-var u = document.createTextNode(timej)
+
 inp.onkeydown = commenter.onkeydown;
-        j.appendChild(inp)  
-        t.appendChild(u)
+        j.appendChild(inp) 
         document.getElementById("commenter").appendChild(j);
-        document.getElementById("time").appendChild(t)
         inp.focus();
         inp.placeholder = "Write your comment here"
         inp.id="comment"
@@ -102,14 +82,35 @@ var pic = document.getElementById("picerer").src
 var picture = document.createElement("img")
 picture.src = pic
 picture.style="width:60px;height:20px;" 
- 
+var t = document.createElement("P")
+var now = new Date();
+var hour = now.getHours()
+
 /* User is the user */
 var user = document.createElement("a");
 user.setAttribute("href", "#");
 user.innerHTML = yui;
 if (t == 0)
 { 
+    if (hour >= 12)
+{
+var bas = "pm"
+}
+else
+{
+var bas = "am"
+}
+var hours = now.getHours() % 12 || 12;
+var minutes = now.getMinutes()
+if (minutes < 10)
+{
+minutes = "0" + minutes
+}
+var timej = hours + ":" + minutes + " " + bas
+var u = document.createTextNode(timej)
+        t.appendChild(u)
 var cmter = document.getElementById("commenter");
+document.getElementById("time").appendChild(t)
 cmter.appendChild(picture)
 cmter.appendChild(user);
 cmter.appendChild(document.createTextNode(": " + this.value));
