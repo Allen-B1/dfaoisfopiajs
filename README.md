@@ -34,7 +34,7 @@ document.getElementById("yoda").innerHTML = j
 }
  
 .div2 {
-float: right;
+text-align: right;
 } 
 </style>
  
