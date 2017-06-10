@@ -30,7 +30,7 @@ document.getElementById("yoda").innerHTML = j
 <style>
  
 .div1 {
-    float: left
+    text-align: left
 }
  
 .div2 {
