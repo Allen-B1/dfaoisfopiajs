@@ -12,11 +12,11 @@ var j = "<a id="username" href="javascript:void(0)" ></a> "
 document.getElementById("yoda").innerHTML = j
 </script>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:60px;height:20px;" id="picerer" />
-<a href="#";><span id="name">Buddy Bud Bud</span></a>
+<span id="name">Buddy Bud Bud</span>
 <HR>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:300px;height:100px;">
 <HR>
-<P>kdjsflaskjdfoaisdfp</p><HR>
+<p>kdjsflaskjdfoaisdfp</p><HR>
 <input type="button" value="Add a comment" onclick="comment()" id="joe"> 
 <input type ="button" value = "Like" onclick="like()">
 <p id="printit"></p>
