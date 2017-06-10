@@ -12,7 +12,7 @@ var j = "<a id="username" href="javascript:void(0)" ></a> "
 document.getElementById("yoda").innerHTML = j
 </script>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:60px;height:20px;" id="picerer" />
-<a><span id="name">Buddy Bud Bud</span></a>
+<a href=#><span id="name">Buddy Bud Bud</span></a>
 <HR>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:300px;height:100px;">
 <HR>
