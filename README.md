@@ -117,7 +117,8 @@ minutes = "0" + minutes
 }
 var timej = hours + ":" + minutes + " " + bas
 var u = document.createTextNode(timej)
-document.getElementById("time").appendChild(u)
+zxc.appendChild(u)
+document.getElementById("time").appendChild(zxc)
 vrv = 0
 t = 1
 }
