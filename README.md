@@ -59,7 +59,7 @@ inp.onkeydown = commenter.onkeydown;
         inp.focus();
         inp.placeholder = "Write your comment here"
         inp.id="comment"
-        inp.size="100"
+        inp.size="50"
  document.getElementById("commenter").onkeypress = function(){handle()}
 vrv = 1
        }}
