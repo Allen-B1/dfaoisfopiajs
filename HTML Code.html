@@ -41,6 +41,28 @@ float: right;
 </style>
 <script>
     alert("ANYBODY")
+    var playersRef = firebase.database().ref("Chat/");
+playersRef.on("child_added", function(data, prevChildKey) {
+    alert(cvs)
+var newPlayer = data.val(); 
+if (cvs == 0){
+    alert("HELLO")
+ var isa = newPlayer.Message.user
+var asd = newPlayer.Message.comment
+var fdfd = newPlayer.Message.time 
+  var zxc = document.createElement("P");
+var bar = document.createElement("P") 
+var asas = document.createTextNode(fdfd);
+var ded = document.createTextNode(asd)  
+bar.appendChild(ded)
+zxc.appendChild(asas) 
+document.getElementById("time").appendChild(zxc)   
+document.getElementById("commenter").appendChild(bar)
+cvs = 1
+} 
+cvs = 0
+});  
+
 
 </script> 
 <script>
