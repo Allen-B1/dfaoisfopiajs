@@ -7,6 +7,7 @@ var boy = 0
 var t = 0
 var liked = "no"
 var vrv = 0
+var cvs = 0
 </script>
 <script>
 var j = "<a id="username" href="javascript:void(0)" ></a> "
@@ -25,12 +26,12 @@ document.getElementById("yoda").innerHTML = j
 <div>
     <div class="div1" id="div">
     <a id="user" href="#"></a><span id="commenter"></span></div>
-    <div class="div2"><p><i id="time"></i></p></div>
+    <div class="div2"><i id="time"></i></div>
     
 </div>
 <style>
  
-.div1 {
+.div1 { 
     float: left
 }
  
@@ -38,23 +39,43 @@ document.getElementById("yoda").innerHTML = j
 float: right;
 } 
 </style>
- 
+<script>
+var playersRef = firebase.database().ref("Chat/");
+playersRef.on("child_added", function(data, prevChildKey) {
+var newPlayer = data.val(); 
+if (cvs == 0){
+ var isa = newPlayer.Message.user
+var asd = newPlayer.Message.comment
+var fdfd = newPlayer.Message.time 
+  var zxc = document.createElement("P");
+var bar = document.createElement("P") 
+var asas = document.createTextNode(fdfd);
+var ded = document.createTextNode(asd)  
+bar.appendChild(ded)
+zxc.appendChild(asas) 
+document.getElementById("time").appendChild(zxc)   
+document.getElementById("commenter").appendChild(bar)
+cvs = 1
+} 
+cvs = 0
+});  
 
+</script> 
 <script>
 function comment(){
 var p = document.getElementById("commenter").value
 if (vrv == 0)
 {
-
+ 
 if (p == undefined){
  
 var inp = document.createElement("input");
 var j = document.createElement("P")
-
-
+ 
+ 
 inp.onkeydown = commenter.onkeydown;
         j.appendChild(inp)  
-
+ 
         document.getElementById("commenter").appendChild(j);
        
         inp.focus();
@@ -64,11 +85,25 @@ inp.onkeydown = commenter.onkeydown;
  document.getElementById("commenter").onkeypress = function(){handle()}
 vrv = 1
        }}
-else{
+else{  
 inp.focus();
 }
 }
 </script>
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBLkaw7WG3PNl9TKrhMEXJw6xobbnKsQng",
+    authDomain: "social-media-11480.firebaseapp.com",
+    databaseURL: "https://social-media-11480.firebaseio.com",
+    projectId: "social-media-11480",
+    storageBucket: "social-media-11480.appspot.com",
+    messagingSenderId: "871316192813"
+  };
+  firebase.initializeApp(config);
+</script>
+ 
 <script>
  var math = document.getElementById("commenter");
 math.onkeydown = function(e) {
@@ -78,11 +113,12 @@ var yui = document.getElementById("name").innerHTML;
  
 /* IDK what any of these are */
 var w = document.getElementById("time");
-var zxc = document.createElement("P");
 var asd= document.createTextNode(": " + this.value);
 var sdf = document.createTextNode(yui + ": " + this.value);
 var pic = document.getElementById("picerer").src
 var picture = document.createElement("img")
+var playersRef = firebase.database().ref("Chat/");
+var nmnm = ": " + this.value
 picture.src = pic
 picture.style="width:60px;height:20px;" 
  
@@ -90,44 +126,61 @@ picture.style="width:60px;height:20px;"
 var user = document.createElement("a");
 user.setAttribute("href", "#");
 user.innerHTML = yui;
-if (t == 0)
-{ 
+ 
+if (t == 0){
+ 
 var cmter = document.getElementById("commenter");
 cmter.appendChild(picture)
 cmter.appendChild(user);
 cmter.appendChild(document.createTextNode(": " + this.value));
-
+ 
+  
+ 
 this.style.display = 'none'
 this.blur() 
+ 
 var now = new Date();
 var hour = now.getHours()
-
+ 
 if (hour >= 12)
 {
 var bas = "pm"
 }
 else
 {
-var bas = "am"
+var bas = "am" 
 }
 var hours = now.getHours() % 12 || 12;
 var minutes = now.getMinutes()
 if (minutes < 10)
 {
-minutes = "0" + minutes
+minutes = "0" + minutes 
 }
 var timej = hours + ":" + minutes + " " + bas
-var u = document.createTextNode(timej)
-zxc.appendChild(u)
-document.getElementById("time").appendChild(zxc)
+var timee = document.createTextNode(timej)
+var an = document.createElement("P")
+an.appendChild(timee) 
+document.getElementById("time").appendChild(an)
+playersRef.push({
+   Message: { 
+      user: yui,
+      comment: nmnm, 
+      time: timej
+   },
+});
+ 
+ 
+} 
+ 
 vrv = 0
-t = 1
+t = 1 
 }
 else
 {
- 
 t = 0
-}}}
+}
+ 
+}
  
 </script>
 <script>
@@ -143,15 +196,14 @@ liked = "Yes"
 boy += 1
 }
  
-var y = boy.toString()
+var y = boy.toString() 
 if (boy != 1&&boy != 0)
-{
+{   
 document.getElementById("printit").innerHTML = "Likes: " + y
+}  
+else if (boy == 1||boy == 0) 
+{ 
+document.getElementById("printit").innerHTML = "Like: " + y 
 }
-else if (boy == 1||boy == 0)
-{
-document.getElementById("printit").innerHTML = "Like: " + y
-}
-}
+}  
 </script> 
-    
