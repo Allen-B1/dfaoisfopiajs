@@ -40,6 +40,7 @@ float: right;
 } 
 </style>
 <script>
+    alert("ANYBODY")
 var playersRef = firebase.database().ref("Chat/");
 playersRef.on("child_added", function(data, prevChildKey) {
     alert(cvs)
