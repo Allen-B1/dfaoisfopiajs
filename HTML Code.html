@@ -56,9 +56,7 @@ float: right;
     alert("ANYBODY")
     var playersRef = firebase.database().ref("Chat/");
 playersRef.on("child_added", function(data, prevChildKey) {
-    alert(cvs)
 var newPlayer = data.val();
-    alert("HELLO")
  var isa = newPlayer.Message.user
 var asd = newPlayer.Message.comment
 var fdfd = newPlayer.Message.time 
