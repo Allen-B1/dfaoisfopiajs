@@ -41,6 +41,7 @@ float: right;
 </style>
 <script>
 var playersRef = firebase.database().ref("Chat/");
+playersRef.on("child_added", function(data, prevChildKey) {
 var newPlayer = data.val(); 
 if (cvs == 0){
  var isa = newPlayer.Message.user
@@ -57,7 +58,7 @@ document.getElementById("commenter").appendChild(bar)
 cvs = 1
 } 
 cvs = 0
-  
+});  
 
 </script> 
 <script>
