@@ -53,7 +53,11 @@ float: right;
 } 
 </style>
 <script>
-  
+ document.addEventListener('DOMContentLoaded', function () {
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
+ 
   </script>  
   
 <script>
