@@ -72,6 +72,10 @@ var fdfd = newPlayer.Message.time
   var userp = document.createElement("P");
 var bar = document.createElement("P") 
 var jake = document.createElement("a");
+var pic = document.getElementById("picerer").src
+var picture = document.createElement("img")
+picture.src = pic
+picture.style="width:60px;height:20px;" 
 var asas = document.createTextNode(fdfd);
 var ded = document.createTextNode(asd) 
 var gh = document.createTextNode(isa)
@@ -80,6 +84,7 @@ jake.appendChild(gh)
 userp.appendChild(jake)
 zxc.appendChild(asas) 
 userp.appendChild(ded)
+userp.appendChild(picture)
 document.getElementById("time").appendChild(zxc) 
 document.getElementById("commenter").appendChild(userp)
 
@@ -142,12 +147,10 @@ math.onkeydown = function(e) {
 var w = document.getElementById("time");
 var asd= document.createTextNode(": " + this.value);
 var sdf = document.createTextNode(yui + ": " + this.value);
-var pic = document.getElementById("picerer").src
-var picture = document.createElement("img")
+
 var playersRef = firebase.database().ref("Chat/");
 var nmnm = ": " + this.value
-picture.src = pic
-picture.style="width:60px;height:20px;" 
+
  
 /* User is the user */
 
