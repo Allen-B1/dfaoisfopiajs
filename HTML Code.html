@@ -71,7 +71,8 @@ var fdfd = newPlayer.Message.time
 
 var users = document.createElement("a");
 users.setAttribute("href", "#");
-user.appendChild(isa);
+var bal = document.createTextNode(isa);
+users.appendChild(bal);
   var zxc = document.createElement("P");
 var bar = document.createElement("P") 
 var asas = document.createTextNode(fdfd);
@@ -80,7 +81,7 @@ bar.appendChild(ded)
 zxc.appendChild(asas) 
 document.getElementById("time").appendChild(zxc) 
   
-document.getElementById("commenter").appendChild(user);
+document.getElementById("commenter").appendChild(users);
 document.getElementById("commenter").appendChild(bar)
  if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.'); 
