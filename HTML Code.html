@@ -84,10 +84,9 @@ document.getElementById("commenter").appendChild(bar)
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
-    var notification = new Notification('Notification title', {
+    var notification = new Notification(fdfd, {
       icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-      title: "Buddy bud bud"
-      body: "Hey there! You've been notified!",
+      body: asd,
     });
 
     notification.onclick = function () {
