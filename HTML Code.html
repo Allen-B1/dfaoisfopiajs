@@ -71,7 +71,11 @@ var fdfd = newPlayer.Message.time
   var zxc = document.createElement("P");
 var bar = document.createElement("P") 
 var asas = document.createTextNode(fdfd);
-var ded = document.createTextNode(asd)  
+var ded = document.createTextNode(asd) 
+var yui = document.getElementById("name").innerHTML;
+var user = document.createElement("a");
+user.setAttribute("href", "#");
+user.innerHTML = yui;
 bar.appendChild(ded)
 zxc.appendChild(asas) 
 document.getElementById("time").appendChild(zxc)   
@@ -129,7 +133,6 @@ inp.focus();
 math.onkeydown = function(e) {
     if(e.keyCode === 13 || e.which === 13) {
 /* YUI is the name of the person */
-var yui = document.getElementById("name").innerHTML;
  
 /* IDK what any of these are */
 var w = document.getElementById("time");
@@ -143,9 +146,7 @@ picture.src = pic
 picture.style="width:60px;height:20px;" 
  
 /* User is the user */
-var user = document.createElement("a");
-user.setAttribute("href", "#");
-user.innerHTML = yui;
+
  
 if (t == 0){
  
