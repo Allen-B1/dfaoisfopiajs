@@ -70,16 +70,17 @@ var asd = newPlayer.Message.comment
 var fdfd = newPlayer.Message.time 
   var zxc = document.createElement("P");
 var bar = document.createElement("P") 
-var userp = document.createElement("P");
+var userp = document.createElement("a");
 var asas = document.createTextNode(fdfd);
 var ded = document.createTextNode(asd) 
 var gh = document.createTextNode(isa)
+userp.setAttribute("href", "#");
 userp.appendChild(gh)
 bar.appendChild(ded)
+userp.appendChild(bar)
 zxc.appendChild(asas) 
 document.getElementById("time").appendChild(zxc)   
 document.getElementById("commenter").appendChild(userp)
-document.getElementById("commenter").appendChild(bar)
  if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.'); 
     return;
