@@ -78,11 +78,11 @@ var sxs = document.createElement("a");
 var asas = document.createTextNode(fdfd);
 var ded = document.createTextNode(asd)  
 zxc.appendChild(asas)
-sxs.appendChild(bal)
- spacer.appendChild(sxs);
 document.getElementById("time").appendChild(zxc) 
-document.getElementById("commenter").appendChild(spacer);
-document.getElementById("commenter").appendChild(ded);
+document.getElementById("user").innerHTML = bal
+document.getElementById("user").appendChild(spacer)
+document.getElementById("commenter").innerHTML = ded
+document.getElementById("commenter").appendChlid(spacer)
 
  if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.'); 
