@@ -157,6 +157,10 @@ math.onkeydown = function(e) {
 if (document.getElementById("name").innerHTML = "<input type=\"text\" placeholder=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"){
 var username = document.getElementById("textuser").value
 }
+else
+{
+ var username = document.getElementById("name").innerHTML; 
+}
 if(username == "")
 {
    document.getElementById("name").innerHTML = "Anonymous"
