@@ -101,6 +101,14 @@ zxc.appendChild(asas)
 userp.appendChild(ded)
 document.getElementById("time").appendChild(zxc) 
 document.getElementById("commenter").appendChild(userp)
+var username = document.getElementById("textuser").value
+if(username == "")
+{
+   document.getElementById("name").innerHTML = "Anonymous"
+}
+else{
+   document.getElementById("name").innerHTML = username
+} 
  if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.'); 
     return;
@@ -166,14 +174,7 @@ var nmnm = ": " + this.value
  
 if (t == 0){
  
- var username = document.getElementById("textuser").value
-if(username == "")
-{
-   document.getElementById("name").innerHTML = "Anonymous"
-}
-else{
-   document.getElementById("name").innerHTML = username
-} 
+ 
   
  
 this.style.display = 'none'
@@ -220,26 +221,20 @@ t = 0
  
 </script>
 <script>
-function like()
-{
-if (liked == "Yes")
-{
-boy -= 1
-liked = "no"
-}
-else if (liked == "no"){
-liked = "Yes"
-boy += 1
-}
+  function like() {
+    if (liked == "Yes") {
+      boy -= 1
+      liked = "no"
+    } else if (liked == "no"){
+      liked = "Yes"
+      boy += 1
+    }
  
-var y = boy.toString() 
-if (boy != 1&&boy != 0)
-{   
-document.getElementById("printit").innerHTML = "Likes: " + y
-}  
-else if (boy == 1||boy == 0) 
-{ 
-document.getElementById("printit").innerHTML = "Like: " + y 
-}
-}  
+    var y = boy.toString() 
+    if (boy != 1&&boy != 0) {
+      document.getElementById("printit").innerHTML = "Likes: " + y
+    } else if (boy == 1||boy == 0) { 
+      document.getElementById("printit").innerHTML = "Like: " + y 
+    }
+  }  
 </script> 
