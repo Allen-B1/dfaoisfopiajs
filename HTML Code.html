@@ -155,17 +155,14 @@ inp.focus();
 math.onkeydown = function(e) {
     if(e.keyCode === 13 || e.which === 13) {
 if (document.getElementById("name").innerHTML == "<input type=\"text\" placeholder=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"){
-alert(document.getElementById("name").innerHTML); 
+ document.getElementById("name").innerHTML = "Anonymous"
 }
 else
 {
  var username = document.getElementById("name").innerHTML; 
-  alert(username);
+ document.getElementById("name").innerHTML = username
 }
-if(username == "")
-{
-   document.getElementById("name").innerHTML = "Anonymous"
-}
+
 /* YUI is the name of the person */
  var yui = document.getElementById("name").innerHTML
 /* IDK what any of these are */
