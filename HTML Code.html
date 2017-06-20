@@ -61,6 +61,7 @@ float: right;
   </script>  
   
 <script>
+    alert("ANYBODY")
     var playersRef = firebase.database().ref("Chat/");
 playersRef.on("child_added", function(data, prevChildKey) {
 var newPlayer = data.val();
@@ -87,8 +88,6 @@ zxc.appendChild(asas)
 userp.appendChild(ded)
 document.getElementById("time").appendChild(zxc) 
 document.getElementById("commenter").appendChild(userp)
-
-
  if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.'); 
     return;
@@ -147,13 +146,10 @@ math.onkeydown = function(e) {
 var w = document.getElementById("time");
 var asd= document.createTextNode(": " + this.value);
 var sdf = document.createTextNode(yui + ": " + this.value);
-
 var playersRef = firebase.database().ref("Chat/");
 var nmnm = ": " + this.value
-
  
 /* User is the user */
-
  
 if (t == 0){
  
@@ -230,4 +226,4 @@ else if (boy == 1||boy == 0)
 document.getElementById("printit").innerHTML = "Like: " + y 
 }
 }  
-</script> 
+</script>
