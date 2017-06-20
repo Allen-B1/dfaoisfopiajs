@@ -27,7 +27,7 @@ var j = "<a id="username" href="javascript:void(0)" ></a> "
 document.getElementById("yoda").innerHTML = j
 </script>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:60px;height:20px;" id="picerer" />
-<a href="javascript:void(0)";><span id="name">Buddy Bud Bud</span></a>
+<a href="javascript:void(0)";><span id="name"></span></a>
 <HR>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:300px;height:100px;">
 <HR>
@@ -59,6 +59,15 @@ float: right;
 });
  
   </script>  
+  <script>
+    document.getElementById("name").innerHTML = "<input type=\"text\" value=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"
+    function registeruser()
+    {
+     var username = document.getElementById("textuser").value
+     document.getElementById("name").innerHTML = username
+      
+    }
+  </script>
   
 <script>
     var playersRef = firebase.database().ref("Chat/");
