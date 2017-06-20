@@ -16,15 +16,15 @@
 * {vertical-align:middle}
 </style>
 <script>
-var boy = 0
-var t = 0
-var liked = "no"
-var vrv = 0
-var cvs = 0
+  var boy = 0
+  var t = 0
+  var liked = "no"
+  var vrv = 0
+  var cvs = 0
 </script>
 <script>
-var j = "<a id="username" href="javascript:void(0)" ></a> "
-document.getElementById("yoda").innerHTML = j
+  var j = "<a id="username" href="javascript:void(0)" ></a> "
+  document.getElementById("yoda").innerHTML = j
 </script>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:60px;height:20px;" id="picerer" />
 <a href="javascript:void(0)";><span id="name"></span></a>
@@ -49,7 +49,7 @@ document.getElementById("yoda").innerHTML = j
 }
  
 .div2 {
-float: right;
+  float: right;
 } 
 </style>
 <script>
@@ -64,8 +64,13 @@ float: right;
     function registeruser()
     {
      var username = document.getElementById("textuser").value
+     if(username == "")
+     {
+        document.getElementById("name").innerHTML = "Anonymous"
+     }
+      else{
      document.getElementById("name").innerHTML = username
-      
+      } 
     }
   </script>
   
