@@ -154,17 +154,15 @@ inp.focus();
  var math = document.getElementById("commenter");
 math.onkeydown = function(e) {
     if(e.keyCode === 13 || e.which === 13) {
-if (cvs == 0){
+if (document.getElementById("name").innerHTML = "<input type=\"text\" placeholder=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"){
 var username = document.getElementById("textuser").value
 }
-if(username == "")
+else if(username == "")
 {
    document.getElementById("name").innerHTML = "Anonymous"
-  cvs = 1
 }
 else{
    document.getElementById("name").innerHTML = username
-  cvs = 1
 } 
 /* YUI is the name of the person */
  var yui = document.getElementById("name").innerHTML
