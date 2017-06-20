@@ -153,14 +153,6 @@ inp.focus();
  var math = document.getElementById("commenter");
 math.onkeydown = function(e) {
     if(e.keyCode === 13 || e.which === 13) {
-       var username = document.getElementById("textuser").value
-if(username == "")
-{
-   document.getElementById("name").innerHTML = "Anonymous"
-}
-else{
-   document.getElementById("name").innerHTML = username
-} 
   
 /* YUI is the name of the person */
  var yui = document.getElementById("name").innerHTML
