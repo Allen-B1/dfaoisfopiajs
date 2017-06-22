@@ -1,3 +1,4 @@
+<title>BB Social Network</title>
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -12,7 +13,7 @@
   firebase.initializeApp(config);
 </script>
 <link rel="stylesheet" href="style.css">
-<style>
+<style> 
 * {vertical-align:middle}
 </style>
 <script>
@@ -28,10 +29,7 @@
 </script>
 <img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:60px;height:20px;" id="picerer" />
 <a href="javascript:void(0)";><span id="name"></span></a>
-<HR>
-<img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:300px;height:100px;">
-<HR>
-<P>kdjsflaskjdfoaisdfp</p><HR>
+<hr>
 <input type="button" value="Add a comment" onclick="comment()" id="joe"> 
 <input type ="button" value = "Like" onclick="like()">
 <p id="printit"></p>
@@ -43,7 +41,6 @@
     
 </div>
 <style>
- 
 .div1 { 
     float: left
 }
@@ -107,8 +104,7 @@ document.getElementById("commenter").appendChild(userp)
     Notification.requestPermission();
   else {
     var notification = new Notification(isa, {
-      icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-      body: asd,
+      body: asd
     });
     notification.onclick = function () {
       window.open("https://jrprogramming.github.io/johnny/HTML%20Code.html#");      
