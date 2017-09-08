@@ -1,1 +1,5 @@
 * {font-family: sans-serif}
+#title-bar {
+    background: #90C3D4;
+    color: #FFF;
+}
