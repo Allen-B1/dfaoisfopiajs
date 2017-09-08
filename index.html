@@ -1,4 +1,4 @@
-<title>BB Social Network</title>
+<title>BB Chat</title>
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -26,7 +26,7 @@
   document.getElementById("yoda").innerHTML = j
 </script>
 <div id="title-bar">
-	<img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:60px;height:20px;" id="picerer" />
+	<span>BB Chat<span>
 	<a href="javascript:void(0)";><span id="name"></span></a>
 </div>
 <hr>
@@ -81,11 +81,12 @@ var fdfd = newPlayer.Message.time
   var userp = document.createElement("P");
 var bar = document.createElement("P") 
 var jake = document.createElement("a");
-var pic = document.getElementById("picerer").src
-var picture = document.createElement("img")
-picture.src = pic
-picture.width = "60";
-picture.height = "20";
+var picture = document.createElement("span")
+picture.innerHTML = "BB Chat";
+picture.style.padding = "8px";
+picture.style.background = "#90C3D4";
+picture.style.margin = "8px";
+picture.style.color = "#FFF";
 var asas = document.createTextNode(fdfd);
 var ded = document.createTextNode(asd) 
 var gh = document.createTextNode(isa)

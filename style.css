@@ -2,6 +2,11 @@
 #title-bar {
     background: #90C3D4;
     color: #FFF;
+    padding: 8px;
+    vertical-align: center;
+}
+#title-bar a {
+    color: #B6D8E3;
 }
 body {
     padding: 0;
