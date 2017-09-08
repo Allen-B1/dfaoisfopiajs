@@ -3,3 +3,7 @@
     background: #90C3D4;
     color: #FFF;
 }
+body {
+    padding: 0;
+    margin: 0;
+}
