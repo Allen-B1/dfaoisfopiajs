@@ -73,30 +73,21 @@ function registeruser() {
     var playersRef = firebase.database().ref("Chat/");
 playersRef.on("child_added", function(data, prevChildKey) {
 var newPlayer = data.val();
- var isa = newPlayer.Message.user
-var asd = newPlayer.Message.comment
-var fdfd = newPlayer.Message.time 
-  var zxc = document.createElement("P");
-  var userp = document.createElement("P");
-var bar = document.createElement("P") 
-var jake = document.createElement("a");
-var picture = document.createElement("span")
-picture.innerHTML = "BB Chat";
-picture.style.padding = "8px";
-picture.style.background = "#90C3D4";
-picture.style.margin = "8px";
-picture.style.color = "#FFF";
-var asas = document.createTextNode(fdfd);
-var ded = document.createTextNode(asd) 
-var gh = document.createTextNode(isa)
-jake.setAttribute("href", "#");
-jake.appendChild(gh)
-userp.appendChild(picture)
-userp.appendChild(jake)
-zxc.appendChild(asas) 
-userp.appendChild(ded)
-document.getElementById("time").appendChild(zxc) 
-document.getElementById("commenter").appendChild(userp)
+var user = newPlayer.Message.user;
+var text = newPlayer.Message.comment;
+var time = newPlayer.Message.time; 
+
+// Add message
+var msg = document.createElement("div");
+msg.classList.add("msg");
+msg.innerHTML = text.slice(2);
+var person = document.createElement("span");
+person.classList.add("msg-small");
+person.innerHTML = user;
+msg.appendChild(person);
+
+document.getElementById("commenter").appendChild(msg);
+
   if (!window.Notification) {
     //alert('Desktop notifications not available in your browser. Try Chromium.'); 
     return;
@@ -104,8 +95,8 @@ document.getElementById("commenter").appendChild(userp)
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
-    var notification = new Notification(isa, {
-      body: asd.slice(2)
+    var notification = new Notification(user, {
+      body: text.slice(2)
     });
     notification.onclick = function () {
       window.open(location.href);      
