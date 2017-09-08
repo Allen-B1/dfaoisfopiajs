@@ -51,23 +51,22 @@
 } 
 </style>
 <script>
- document.addEventListener('DOMContentLoaded', function () {
-  if (Notification.permission !== "granted")
+document.addEventListener('DOMContentLoaded', function () {
+if (Notification.permission !== "granted")
     Notification.requestPermission();
 });
  
-  </script>  
-  <script>
-    document.getElementById("name").innerHTML = "<input type=\"text\" placeholder=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"
-    function registeruser() {
-      var username = document.getElementById("textuser").value
-      if(username == "") {
+
+document.getElementById("name").innerHTML = "<input type=\"text\" placeholder=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"
+function registeruser() {
+    var username = document.getElementById("textuser").value
+    if(username == "") {
         username = "Anonymous";
         document.getElementById("name").innerHTML = username
-      } else {
+    } else {
         document.getElementById("name").innerHTML = username
-      } 
-    }
+    } 
+}
   </script>
   
 <script>
