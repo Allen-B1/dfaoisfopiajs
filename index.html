@@ -116,7 +116,7 @@ var j = document.createElement("P")
  
  
 inp.onkeydown = commenter.onkeydown;
-        j.appendChild(inp)  
+        j.appendChild(inp);
  
         document.getElementById("commenter").appendChild(j);
        
@@ -124,12 +124,12 @@ inp.onkeydown = commenter.onkeydown;
         inp.placeholder = "Write your comment here"
         inp.id="comment"
         inp.size="100"
- document.getElementById("commenter").onkeypress = function(){handle()}
-vrv = 1
+        document.getElementById("commenter").onkeypress = function(){handle()}
+        vrv = 1;
        }}
-else{  
-inp.focus();
-}
+    else{  
+        inp.focus();
+    }
 }
 </script>
  
@@ -184,7 +184,8 @@ playersRef.push({
    },
 });
  
- 
+this.parentNode.remove();
+
 } 
  
 vrv = 0
