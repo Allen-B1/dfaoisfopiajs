@@ -1,4 +1,7 @@
-* {font-family: sans-serif}
+* {
+    font-family: sans-serif;
+    font-size: 18px;
+}
 #title-bar {
     background: #00B2ED;
     color: #FFF;
@@ -21,5 +24,5 @@ body {
 }
 .msg-small {
     display: block;
-    font-size: 10px;
+    font-size: 12px;
 }
