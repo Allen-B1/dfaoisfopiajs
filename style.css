@@ -27,3 +27,6 @@ body {
     display: block;
     font-size: 12px;
 }
+.msg.me {
+    background: #62FF00;
+}

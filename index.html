@@ -69,6 +69,7 @@ registeruser();
 <script>
 var playersRef = firebase.database().ref("Chat/");
 
+// When message comes
 playersRef.on("child_added", function(data, prevChildKey) {
     var newPlayer = data.val();
     var user = newPlayer.Message.user;
@@ -78,6 +79,10 @@ playersRef.on("child_added", function(data, prevChildKey) {
     // Add message
     var msg = document.createElement("div");
     msg.classList.add("msg");
+    
+    // If user matchees current user and user is not anonymous
+    if(user == decodeURI(location.search.slice(1)) && user)
+        msg.classList.add("me");
     msg.innerHTML = text.slice(2);
     var person = document.createElement("span");
     person.classList.add("msg-small");
@@ -86,8 +91,7 @@ playersRef.on("child_added", function(data, prevChildKey) {
 
     document.getElementById("commenter").appendChild(msg);
 
-  if (!window.Notification) {
-    //alert('Desktop notifications not available in your browser. Try Chromium.'); 
+  if (!window.Notification || (user == decodeURI(location.search.slice(1)) && user) ) {
     return;
   }
   if (Notification.permission !== "granted")
@@ -99,7 +103,6 @@ playersRef.on("child_added", function(data, prevChildKey) {
     notification.onclick = function () {
       window.open(location.href);      
     };
-    
   }
 });  
 </script> 
