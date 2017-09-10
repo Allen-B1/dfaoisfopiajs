@@ -1,4 +1,4 @@
-<title>BB Social Network</title>
+<title>BB Chat</title>
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -22,24 +22,29 @@
   var liked = "no"
   var vrv = 0
   var cvs = 0
+  var j = "<a id=\"username\" href=\"javascript:void(0)\" ></a> "
+  //document.getElementById("yoda").innerHTML = j
 </script>
-<script>
-  var j = "<a id="username" href="javascript:void(0)" ></a> "
-  document.getElementById("yoda").innerHTML = j
-</script>
-<img src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" style="width:60px;height:20px;" id="picerer" />
-<a href="javascript:void(0)";><span id="name"></span></a>
+<div id="title-bar">
+	<span>BB Chat</span>
+	<a href="javascript:void(0)"><span id="name"></span></a>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
+    <meta name="theme-color" content="#00B2ED">
+</div>
 <hr>
 <input type="button" value="Add a comment" onclick="comment()" id="joe"> 
-<input type ="button" value = "Like" onclick="like()">
+<input type="button" value="Like" onclick="like()">
 <p id="printit"></p>
 <span id="printiter"></span>
 <div>
     <div class="div1" id="div">
-    <a id="user" href="#"></a><span id="commenter"></span></div>
+        <a id="user" href="#"></a>
+    </div>
     <div class="div2"><i id="time"></i></div>
-    
 </div>
+
+<div id="commenter"></div>
+
 <style>
 .div1 { 
     float: left
@@ -50,66 +55,56 @@
 } 
 </style>
 <script>
- document.addEventListener('DOMContentLoaded', function () {
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
+document.addEventListener('DOMContentLoaded', function () {
+    if (Notification.permission !== "granted")
+        Notification.requestPermission();
 });
  
-  </script>  
-  <script>
-    document.getElementById("name").innerHTML = "<input type=\"text\" placeholder=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"
-    function registeruser() {
-      var username = document.getElementById("textuser").value
-      if(username == "") {
-        username = "Anonymous";
-        document.getElementById("name").innerHTML = username
-      } else {
-        document.getElementById("name").innerHTML = username
-      } 
-    }
+
+function registeruser() {
+    var username = decodeURI(location.search.slice(1));
+    document.getElementById("name").innerHTML = username;
+}
+registeruser();
   </script>
   
 <script>
-    var playersRef = firebase.database().ref("Chat/");
+var playersRef = firebase.database().ref("Chat/");
+
+// When message comes
 playersRef.on("child_added", function(data, prevChildKey) {
-var newPlayer = data.val();
- var isa = newPlayer.Message.user
-var asd = newPlayer.Message.comment
-var fdfd = newPlayer.Message.time 
-  var zxc = document.createElement("P");
-  var userp = document.createElement("P");
-var bar = document.createElement("P") 
-var jake = document.createElement("a");
-var pic = document.getElementById("picerer").src
-var picture = document.createElement("img")
-picture.src = pic
-picture.width = "60";
-picture.height = "20";
-var asas = document.createTextNode(fdfd);
-var ded = document.createTextNode(asd) 
-var gh = document.createTextNode(isa)
-jake.setAttribute("href", "#");
-jake.appendChild(gh)
-userp.appendChild(picture)
-userp.appendChild(jake)
-zxc.appendChild(asas) 
-userp.appendChild(ded)
-document.getElementById("time").appendChild(zxc) 
-document.getElementById("commenter").appendChild(userp)
-  if (!window.Notification) {
-    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    var newPlayer = data.val();
+    var user = newPlayer.Message.user;
+    var text = newPlayer.Message.comment;
+    var time = newPlayer.Message.time; 
+
+    // Add message
+    var msg = document.createElement("div");
+    msg.classList.add("msg");
+    
+    // If user matchees current user and user is not anonymous
+    if(user == decodeURI(location.search.slice(1)) && user)
+        msg.classList.add("me");
+    msg.innerHTML = text.slice(2);
+    var person = document.createElement("span");
+    person.classList.add("msg-small");
+    person.innerHTML = user;
+    msg.appendChild(person);
+
+    document.getElementById("commenter").appendChild(msg);
+
+  if (!window.Notification || (user == decodeURI(location.search.slice(1)) && user) ) {
     return;
   }
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
-    var notification = new Notification(isa, {
-      body: asd.slice(2)
+    var notification = new Notification(user ? user : "Anonymous", {
+      body: text.slice(2)
     });
     notification.onclick = function () {
-      window.open("https://jrprogramming.github.io/johnny/HTML%20Code.html#");      
+      window.open(location.href);      
     };
-    
   }
 });  
 </script> 
@@ -126,7 +121,7 @@ var j = document.createElement("P")
  
  
 inp.onkeydown = commenter.onkeydown;
-        j.appendChild(inp)  
+        j.appendChild(inp);
  
         document.getElementById("commenter").appendChild(j);
        
@@ -134,12 +129,12 @@ inp.onkeydown = commenter.onkeydown;
         inp.placeholder = "Write your comment here"
         inp.id="comment"
         inp.size="100"
- document.getElementById("commenter").onkeypress = function(){handle()}
-vrv = 1
+        document.getElementById("commenter").onkeypress = function(){handle()}
+        vrv = 1;
        }}
-else{  
-inp.focus();
-}
+    else{  
+        inp.focus();
+    }
 }
 </script>
  
@@ -147,14 +142,10 @@ inp.focus();
  var math = document.getElementById("commenter");
 math.onkeydown = function(e) {
     if(e.keyCode === 13 || e.which === 13) {
-if (document.getElementById("name").innerHTML == "<input type=\"text\" placeholder=\"Type in your name\" id=\"textuser\"><input type=\"button\" value=\"Enter\" onclick=\"registeruser()\">"){
- document.getElementById("name").innerHTML = "Anonymous"
-}
-else
-{
+
  var username = document.getElementById("name").innerHTML; 
  document.getElementById("name").innerHTML = username
-}
+
 
 /* YUI is the name of the person */
  var yui = document.getElementById("name").innerHTML
@@ -163,7 +154,7 @@ var w = document.getElementById("time");
 var asd= document.createTextNode(": " + this.value);
 var sdf = document.createTextNode(yui + ": " + this.value);
 var playersRef = firebase.database().ref("Chat/");
-var nmnm = ": " + this.value
+var nmnm = ": " + this.value;
  
 /* User is the user */
  
@@ -194,11 +185,12 @@ playersRef.push({
    Message: { 
       user: yui,
       comment: nmnm, 
-      time: timej
+      time: timej.trim()
    },
 });
  
- 
+this.parentNode.remove();
+
 } 
  
 vrv = 0
